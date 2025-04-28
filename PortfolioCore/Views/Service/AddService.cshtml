@@ -1,0 +1,21 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Add New Service</h1>
+
+<form method="post">
+    <label>Service Title</label>
+    <input type="text" class="form-control" asp-for="ServiceTitle" style="border:1px solid black;" />
+    <br />
+    <label>Service Description</label>
+    <input type="text" class="form-control" asp-for="ServiceDescription" style="border:1px solid black;" />
+    <br />
+    <label>Service Image</label>
+    <input type="text" class="form-control" asp-for="ServiceImageUrl" style="border:1px solid black;" />
+    <br />
+
+    <button class="btn btn-primary">Add New Service</button>
+</form>

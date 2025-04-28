@@ -7,7 +7,7 @@ namespace PortfolioCore.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-J55IQTS\\SQLEXPRESS;Database=PortfolioNightDb;integrated security=true");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-J55IQTS\\SQLEXPRESS;initial Catalog=PortfolioNightDb;integrated security=true;");
         }
 
 
