@@ -1,0 +1,32 @@
+﻿@model List<Skill>
+@{
+    ViewData["Title"] = "SkillList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>SkillList</h1>
+
+<table class="table table-boarded">
+    <tr>
+        <th>#</th>
+        <th>Skill Name</th>
+        <th>Skill Value</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SkillId</td>
+            <td>@x.SkillName</td>
+            <td>@x.SkillValue</td>
+            <td><a href="/Skill/DeleteSkill/@x.SkillId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Skill/UpdateSkill/@x.SkillId" class="btn btn-success">Update</a></td>
+
+
+        </tr>
+    }
+
+
+</table>
+<a href="/Skill/CreateSkill/" class="btn btn-primary">Add new skill</a>

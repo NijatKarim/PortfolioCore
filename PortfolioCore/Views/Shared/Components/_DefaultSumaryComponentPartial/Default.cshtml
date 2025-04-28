@@ -1,0 +1,13 @@
+﻿@model List<About>
+
+    @foreach(var item in Model){
+<div class="resume-item pb-0">
+    <h4>@item.NameSurname</h4>
+    <p><em>@item.Summary</em></p>
+    <ul>
+        <li>@item.City</li>
+        <li>@item.Phone</li>
+        <li>@item.Email</li>
+    </ul>
+    </div>
+}

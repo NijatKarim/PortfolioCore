@@ -1,0 +1,9 @@
+﻿@model List<Profession>
+
+@{
+    var typedItems = string.Join(", ", Model.Select(x=>x.ProfessionName));
+}
+
+<p>I'm 
+    <span class="typed" data-typed-items="@typedItems">@Model.FirstOrDefault()?.ProfessionName</span>
+    <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>

@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body class="index-page">
+
+    @await Component.InvokeAsync("_DefaultSidebarComponentPartial")
+
+    <main class="main">
+
+        @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
+        @await Component.InvokeAsync("_DefaultAboutComponentPartial")
+        @await Component.InvokeAsync("_DefaultStatsComponentPartial")
+
+        
+        @await Component.InvokeAsync("_DefaultSkillComponentPartial")
+
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Resume</h2>
+             
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="resume-title">Sumary</h3>
+
+                        @await Component.InvokeAsync("_DefaultSumaryComponentPartial")
+
+                        @await Component.InvokeAsync("_DefaultEducationComponentPartial")
+
+                    </div>
+                    @await Component.InvokeAsync("_DefaultExperienceComponentPartial")
+                  
+
+                </div>
+
+            </div>
+
+        </section><!-- /Resume Section -->
+        <!-- Portfolio Section -->
+        @await Component.InvokeAsync("_DefaultPortfolioComponentPartial")
+        <!-- /Portfolio Section -->
+        @await Component.InvokeAsync("_DefaultServicesComponentPartial")
+
+        @await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
+        @await Component.InvokeAsync("_DefaultContactComponentPartial")
+       
+
+    </main>
+
+    <footer id="footer" class="footer position-relative light-background">
+        <div class="container">
+     
+            <div class="container">
+                <div class="copyright">
+                    <span>Copyright</span> <strong class="px-1 sitename">Portfolio Core Project</strong> <span>All Rights Reserved</span>
+                </div>
+                <div class="credits">
+        
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+
+</html>

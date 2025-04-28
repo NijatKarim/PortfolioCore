@@ -1,0 +1,29 @@
+﻿@model Message
+
+<div class="col-lg-8">
+    <form asp-controller="Message" asp-action="SendMessage" method="post"  data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4">
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Your Name" asp-for="MessageNameSurname" required="">
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" class="form-control" asp-for="MessageEmail" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" asp-for="MessageSubject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+                <textarea class="form-control" asp-for="MessageDetail" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+
+
+                <button type="submit" class="btn btn-success">Send Message</button>
+
+        </div>
+    </form>
+</div><!-- End Contact Form -->

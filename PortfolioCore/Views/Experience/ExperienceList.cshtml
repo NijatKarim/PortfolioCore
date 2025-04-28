@@ -1,0 +1,34 @@
+﻿@model List<PortfolioCore.Entities.Experience>
+@{
+    ViewData["Title"] = "ExperienceList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int counter = 1;
+}
+
+<h1>My Experiences</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Duites</th>
+        <th>Working years</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@counter</td>
+            <td>@item.ExperienceTitle</td>
+            <td>@item.ExperienceSubTitle</td>
+            <td>@item.ExperienceDescription</td>
+            <td>@item.ExperienceDate</td>
+            <td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-success">Update</a></td>
+        </tr>
+        counter++;
+    }
+    </table>
+<a href="/Experience/CreateExperience/" class="btn btn-primary">Add New Experience</a>

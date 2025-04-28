@@ -1,0 +1,30 @@
+﻿@model List<Testimonial>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int counter = 1;
+}
+
+<h1>My References</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name Surname</th>
+        <th>Title</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@counter</td>
+            <td>@item.TestimonialNameSurname</td>
+            <td>@item.TestimonialTitle</td>
+            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-success">Update</a></td>
+        </tr>
+        counter++;
+    }
+</table>
+<a href="/Testimonial/AddTestimonial/" class="btn btn-primary">Add New Referance</a>

@@ -1,0 +1,46 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>About Me</h1>
+
+<form method="post" >
+    <div class="d-flex justify-content-end mb-3">
+        <button type="submit" class="btn btn-primary">Update Education Info</button>
+    </div>
+    <input type="hidden" asp-for="AboutId" />
+
+    <label>Name and Surname</label>
+    <input type="text" class="form-control" asp-for="NameSurname" style="border:1px solid black;" />
+    <br />
+    <label>Title</label>
+    <input type="text" class="form-control" asp-for="Title" style="border:1px solid black;" />
+    <br />
+    <label>Birthday</label>
+    <input type="date" class="form-control" asp-for="Birthday" style="border:1px solid black;" />
+    <br />
+    <label>Phone Number</label>
+    <input type="text" class="form-control" asp-for="Phone" style="border:1px solid black;" />
+    <br />
+    <label>City</label>
+    <input type="text" class="form-control" asp-for="City" style="border:1px solid black;" />
+    <br />
+    <label>Last Education Degree</label>
+    <input type="text" class="form-control" asp-for="Degree" style="border:1px solid black;" />
+    <br />
+    <label>Email Address</label>
+    <input type="email" class="form-control" asp-for="Email" style="border:1px solid black;" />
+    <br />
+    <label>ImageURL</label>
+    <input type="text" class="form-control" asp-for="ImageUrl" style="border:1px solid black;" />
+    <br />
+    <label>Professional Summary</label>
+    <input type="text" class="form-control" asp-for="Summary" style="border:1px solid black;" />
+    <br />
+    <label>About me</label>
+    <input type="text" class="form-control" asp-for="Summary2" style="border:1px solid black;" />
+    <br />
+    <button class="btn btn-primary">Update Education Info</button>
+</form>

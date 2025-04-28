@@ -1,0 +1,42 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int counter = 1;
+}
+
+<h1>Inbox</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Sender</th>
+        <th>From</th>
+        <th>Subject</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@counter</td>
+            <td>@item.MessageNameSurname</td>
+            <td>@item.MessageEmail</td>
+            <td>@item.MessageSubject</td>
+            <td>@item.MessageSendDate.ToShortDateString()</td>
+            @if (item.MessageIsRead == true)
+            {
+                <td><a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-dark">Mark as unread</a></td>
+            }
+            else
+            {
+                <td><a href="/Message/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info">Mark as read</a></td>
+            }
+            <td><a href="/Message/MessageDetails/@item.MessageId" class="btn btn-primary">Open Message</a></td>
+            <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Delete</a></td>
+        </tr>
+        counter++;
+    }
+</table>

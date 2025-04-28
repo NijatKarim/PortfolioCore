@@ -1,0 +1,27 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Add Portfolio</h1>
+<form  method="post">
+
+<label>Projet Title</label>
+<input type="text" asp-for="Title" class="form-control" />
+<br/>
+
+<label>Projet Description</label>
+<input type="text" asp-for="Description" class="form-control" />
+<br />
+
+<label>Image Url</label>
+<input type="text" asp-for="ImageUrl" class="form-control" />
+<br />
+<label>Category</label>
+    <select asp-for="CategoryId" asp-items="ViewBag.v" class="form-control">
+        <option value="">--- Please select----</option>
+    </select>
+<br />
+<button class="btn btn-primary">Add Portfolio</button>
+</form>

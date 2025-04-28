@@ -1,0 +1,9 @@
+﻿@model List<SocialMedia>
+
+
+<div class="social-links">
+    @foreach (var x in Model)
+    {
+        <a href="@x.SocialMediaUrl"><i class="@x.SocialMediaTag"></i></a>
+    }
+</div>
